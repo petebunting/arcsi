@@ -2748,10 +2748,11 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
         img_band11_tmp = None
         img_band12_tmp = None
 
+        basename = self.generateOutputBaseName() # use a basename which has the generation time for uniqueness
+
         if abs(self.ratiometric_offs_B1) > 0:
-            basename = os.path.splitext(os.path.basename(img_band02))[0]
             img_band02_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B02_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B1}"
             rsgislib.imagecalc.image_math(
@@ -2760,9 +2761,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band02 = img_band02_tmp
 
         if abs(self.ratiometric_offs_B2) > 0:
-            basename = os.path.splitext(os.path.basename(img_band03))[0]
             img_band03_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B03_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B2}"
             rsgislib.imagecalc.image_math(
@@ -2771,9 +2771,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band03 = img_band03_tmp
 
         if abs(self.ratiometric_offs_B3) > 0:
-            basename = os.path.splitext(os.path.basename(img_band04))[0]
             img_band04_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B04_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B3}"
             rsgislib.imagecalc.image_math(
@@ -2782,9 +2781,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band04 = img_band04_tmp
 
         if abs(self.ratiometric_offs_B4) > 0:
-            basename = os.path.splitext(os.path.basename(img_band05))[0]
             img_band05_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B05_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B4}"
             rsgislib.imagecalc.image_math(
@@ -2793,9 +2791,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band05 = img_band05_tmp
 
         if abs(self.ratiometric_offs_B5) > 0:
-            basename = os.path.splitext(os.path.basename(img_band06))[0]
             img_band06_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B06_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B5}"
             rsgislib.imagecalc.image_math(
@@ -2804,9 +2801,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band06 = img_band06_tmp
 
         if abs(self.ratiometric_offs_B6) > 0:
-            basename = os.path.splitext(os.path.basename(img_band07))[0]
             img_band07_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B07_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B6}"
             rsgislib.imagecalc.image_math(
@@ -2815,9 +2811,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band07 = img_band07_tmp
 
         if abs(self.ratiometric_offs_B7) > 0:
-            basename = os.path.splitext(os.path.basename(img_band08))[0]
             img_band08_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B08_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B7}"
             rsgislib.imagecalc.image_math(
@@ -2826,9 +2821,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band08 = img_band08_tmp
 
         if abs(self.ratiometric_offs_B8) > 0:
-            basename = os.path.splitext(os.path.basename(img_band08A))[0]
             img_band08A_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B08A_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B8}"
             rsgislib.imagecalc.image_math(
@@ -2837,9 +2831,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band08A = img_band08A_tmp
 
         if abs(self.ratiometric_offs_B11) > 0:
-            basename = os.path.splitext(os.path.basename(img_band11))[0]
             img_band11_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B11_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B11}"
             rsgislib.imagecalc.image_math(
@@ -2848,9 +2841,8 @@ class ARCSISentinel2Sensor(ARCSIAbstractSensor):
             img_band11 = img_band11_tmp
 
         if abs(self.ratiometric_offs_B12) > 0:
-            basename = os.path.splitext(os.path.basename(img_band12))[0]
             img_band12_tmp = os.path.join(
-                outputPath, f"{basename}_tmpoffapply.kea"
+                outputPath, f"{basename}_B12_tmpoffapply.kea"
             )
             exp = f"b1 + {self.ratiometric_offs_B12}"
             rsgislib.imagecalc.image_math(
